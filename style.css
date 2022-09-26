@@ -1,0 +1,165 @@
+:root{
+    font-size: 18px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'kuumbh sans', sans-serif;
+    color: hsl(0, 11%, 12%);
+}
+/* this is for the page */
+section{
+    background-color: hsl(185, 75%, 39%);
+    height: 100vh; /* it makes the full length of the page */
+    display: flex;
+    justify-content: center; /* for makes the child of this parent are in the center*/
+    align-items: center;
+    position: relative; /* there is will not be over flow */
+    overflow: hidden; /* if any element is overflowing it will be hidden */
+}
+
+/* the full card */
+.card{
+    width: 350px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    position: relative; /* no element can be above this */
+}
+
+.card-header{
+    background-image: url(images/bg-pattern-card.svg);
+    background-size: cover;
+    height: 150px;
+
+}
+
+/* this is the profile photo */
+.img-holder img{
+    border-radius: 50%;
+    margin-left: 36%; /* you can use justfiy content and align-items to make it center but in the parent not the child*/
+    margin-top: -35px;
+    border: 5px solid white;
+}
+
+/* the name and the age */
+.name-age{
+    padding: 5px;
+    display: flex;
+    justify-content: center; /* you can write once for all the lement that have the same attribute */
+    align-items: center;/* itsand of overwritting it every time */
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.age{
+    padding-left: 10px;
+    color: #808080e0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* the city */
+.city{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #808080e0;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 25px;
+}
+hr{
+    opacity: 50%;
+
+}
+
+.item{
+    width: 113px;
+    display: inline-block;
+    padding: 46px;
+    padding-top: 20px;
+    padding-bottom: 25px
+
+
+
+}
+
+.meta{
+    color: #808080e0;
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    padding-top: 2px;
+}
+
+
+/* graphics circles */
+
+.circles .c1,
+.circles .c2{
+    position: absolute;
+    animation: 2s circles forwards;
+    opacity: 0;
+}
+
+.circles .c1{
+    top: -500px;
+    left: -350px;
+    transform: translate(-100px, -50px);
+    
+}
+
+
+.circles .c2{
+    bottom: -500px;
+    right: -350px;
+    transform: translate(100px, 50px);
+
+}
+
+@keyframes circles{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.attribution{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: 0.4s;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.attribution:hover{
+    transform: translateY(0);
+}
+
+.attribution::before{
+    content: '';
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+}
